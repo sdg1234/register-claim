@@ -43,7 +43,7 @@ app.get('/message', function(req, res) {
                 switch (policyType) {
                     case 'ending':
                         //code
-                        var userResult = [{"speech": "okay, here your go"}];
+                        var userResult = [{"speech": okay, here are the policies ending with "+policyIdData}];
                         for(var i=0; i< policyList.length; i++) {
                             if(policyList[i].policyId.endsWith(policyIdData)) {
                                 userResult.push(policyList[i]);
@@ -53,7 +53,7 @@ app.get('/message', function(req, res) {
                         break;
                     case 'contains':
                         //code
-                        var userResult = [{"speech": "okay, here your go"}];
+                        var userResult = [{"speech": okay, here are the policies contanining "+policyIdData}];
                         for(var i=0; i< policyList.length; i++) {
                             if(policyList[i].policyId.includes(policyIdData)) {
                                 userResult.push(policyList[i]);
@@ -63,7 +63,7 @@ app.get('/message', function(req, res) {
                         break;
                     case 'starting':
                         //code
-                        var userResult = [{"speech": "okay, here your go"}];
+                        var userResult = [{"speech": okay, here are the policies starting with "+policyIdData}];
                         for(var i=0; i< policyList.length; i++) {
                             if(policyList[i].policyId.startsWith(policyIdData)) {
                                 userResult.push(policyList[i]);
