@@ -59,7 +59,7 @@ app.get('/message', function(req, res) {
                                 userResult.push(policyList[i]);
                             }
                         }
-                        res.send(userResult);
+                        res.send(result.result.fulfillment.speech);
                         break;
                     case 'starting':
                         //code
@@ -69,7 +69,7 @@ app.get('/message', function(req, res) {
                                 userResult.push(policyList[i]);
                             }
                         }
-                        res.send(userResult);
+                        res.send(result.result.fulfillment.speech);
                         break;
                     default:
                         //default action
@@ -79,10 +79,10 @@ app.get('/message', function(req, res) {
                                 userResult.push(policyList[j]);
                             }
                         }
-                        res.send(userResult);
+                        res.send(result.result.fulfillment.speech);
                 }
             } else {
-                res.send('action incomplete');
+                res.send(result.result.fulfillment.speech);
             }
         }
     }
