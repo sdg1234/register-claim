@@ -1,0 +1,7 @@
+{
+  "name": "register-claim",
+  "description": "register a claim",
+  "repository": "https://github.com/sdg1234/register-claim",
+  "keywords": ["node", "express", "static"],
+  "image": "heroku/nodejs"
+}
