@@ -1,6 +1,5 @@
 var express = require('express');
 var app = express();
-var http = require('http').Server(app);
 var request = require('request');
 
 app.use(express.static(__dirname + '/public'));
@@ -92,7 +91,7 @@ app.get('/message', function(req, res) {
 });
 
 var port = 3003;
-http.listen(port, function() {
+app.listen(port, function() {
     console.log('listening on port: *' + port);
 });
 
