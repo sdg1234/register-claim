@@ -53,7 +53,7 @@ app.get('/message', function(req, res) {
                         break;
                     case 'contains':
                         //code
-                        var userResult = [{"speech": "okay, here are the policies contanining "+policyIdData}];
+                        var userResult = [{"speech": "okay, here are the policies containing "+policyIdData}];
                         for(var i=0; i< policyList.length; i++) {
                             if(policyList[i].policyId.includes(policyIdData)) {
                                 userResult.push(policyList[i]);
@@ -71,7 +71,7 @@ app.get('/message', function(req, res) {
                         }
                         res.send(userResult);
                         break;
-                    default:
+                    case '':
                         //default action
                         var userResult = [{"speech": "okay, here your go"}];
                         for(var j=0; j< policyList.length; j++) {
@@ -80,6 +80,10 @@ app.get('/message', function(req, res) {
                             }
                         }
                         res.send(userResult);
+                        break;
+                  default:
+                    var userResult = [{"speech": result.result.fulfillment.speech}];
+                    res.send(userResult);
                 }
             } else {
                 var userResult = [{"speech": result.result.fulfillment.speech}];
