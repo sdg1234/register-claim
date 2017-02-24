@@ -43,7 +43,7 @@ app.get('/message', function(req, res) {
                 switch (policyType) {
                     case 'ending':
                         //code
-                        var userResult = [];
+                        var userResult = [{"speech": "okay, here your go"}];
                         for(var i=0; i< policyList.length; i++) {
                             if(policyList[i].policyId.endsWith(policyIdData)) {
                                 userResult.push(policyList[i]);
@@ -53,36 +53,37 @@ app.get('/message', function(req, res) {
                         break;
                     case 'contains':
                         //code
-                        var userResult = [];
+                        var userResult = [{"speech": "okay, here your go"}];
                         for(var i=0; i< policyList.length; i++) {
                             if(policyList[i].policyId.includes(policyIdData)) {
                                 userResult.push(policyList[i]);
                             }
                         }
-                        res.send(result.result.fulfillment.speech);
+                        res.send(userResult);
                         break;
                     case 'starting':
                         //code
-                        var userResult = [];
+                        var userResult = [{"speech": "okay, here your go"}];
                         for(var i=0; i< policyList.length; i++) {
                             if(policyList[i].policyId.startsWith(policyIdData)) {
                                 userResult.push(policyList[i]);
                             }
                         }
-                        res.send(result.result.fulfillment.speech);
+                        res.send(userResult);
                         break;
                     default:
                         //default action
-                        var userResult = [];
+                        var userResult = [{"speech": "okay, here your go"}];
                         for(var j=0; j< policyList.length; j++) {
                             if(policyIdData == policyList[j].policyId) {
                                 userResult.push(policyList[j]);
                             }
                         }
-                        res.send(result.result.fulfillment.speech);
+                        res.send(userResult);
                 }
             } else {
-                res.send(result.result.fulfillment.speech);
+                var userResult = [{"speech": result.result.fulfillment.speech}];
+                res.send(userResult);
             }
         }
     }
