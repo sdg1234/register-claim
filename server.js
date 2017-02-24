@@ -90,7 +90,7 @@ app.get('/message', function(req, res) {
     request(options, callback);
 });
 
-var port = 3003;
+var port=Number(process.env.PORT || 3000);
 app.listen(port, function() {
     console.log('listening on port: *' + port);
 });
